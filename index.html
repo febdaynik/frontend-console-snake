@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Console Snake</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<img id="logo_img" src="img/icon.png" width="80px" onclick="icon()">
+		</header>
+		<div id="mini_pashalka" class="mini-pashalka inv">
+			<div class="pas-ru">
+				[RU]<br>
+				Эта иконка никуда не ведёт.<br>Но ты можешь написать <a href="https://t.me/febdes">мне</a> свои пожелания.
+			</div>
+			<div class="pas-en">
+				[EN]<br>
+				This icon doesn't lead anywhere.<br>But you can write <a href="https://t.me/febdes">me</a> your wishes.
+			</div>
+		</div>
+		<data id="token" style="color: #fff; display: none;"></data>
+		<main class="page">
+			<div  id="0" class="container">
+				<div class="block">
+					<div class="info">
+						<h1>Рейтинговая таблица</h1>
+						<h3>Играйте, набивайте очки и попадайте в топ-5 лучших игроков. Таблица генерируется автоматически, с учётом имеющихся аккаунтов</h3>
+					</div>
+
+					<div id="record_table">
+						<div class="name-column-table">
+							<div>Если таблица не загрузилась, значит у вас проблемы с интернетом или ваш браузер не поддерживает JS. Также перезагрузите старницу (F5)</div>
+						</div>
+					</div>
+				</div>
+				<div id="1" class="next-block" onclick="next_block(this)">></div>
+			</div>
+
+			<div id="1" class="container inv">
+				<div  class="block">
+					<div class="info">
+						<h1>Почему именно змейка?</h1>
+						<h3>Идея сделать змейку пришла мне ещё в 2019 году, когда я участвовал на олимпиаде и там попалось такое задание. Конечно, я посмотрел на него и забил, потому что хотелось домой. Но вот спустя 2 года я вспомнил и решился взяться за это. На питоне консольную змейку сделал только один человек (основываюсь на поиске), но у него она была не доделанная. Я же постарался сделать лучше</h3>
+					</div>
+
+					<div id="console-table">
+						<div class="console">
+							<p style="font-size: 10px;">console_snake.py</p>
+							<p>##############################</p>
+							<p>#&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;#</p>
+							<p>#&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;o►&numsp;&numsp;&numsp;@&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;#</p>
+							<p>#&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;o&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;#</p>
+							<p>#&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;ooo&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;#</p>
+							<p>#&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;#</p>
+							<p>##############################</p>
+						</div>
+					</div>
+				</div>
+				<div id="2" class="next-block" onclick="next_block(this)">></div>
+			</div>
+
+			<div id="2" class="container inv">
+				<div  class="block">
+					<div class="info">
+						<h1>Скачать игру</h1>
+						<h3>Вы можете скачать игру прям сейчас по ссылкам</h3>
+						<h5>В случае публикации вне сайта указывайте моё авторство</h5>
+					</div>
+					<div class="download-list">
+						<a href=""><img src="https://pngimg.com/uploads/github/github_PNG40.png" width="150px"></a>
+						<a href=""><img src="https://yt3.ggpht.com/a/AATXAJymFOE69Vuu8Q3rFmBL78NTw2-wF_Y7FeY6Sw=s900-c-k-c0xffffffff-no-rj-mo" width="150px"></a>
+						<a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Logo_of_Google_Drive.svg/1200px-Logo_of_Google_Drive.svg.png" width="150px"></a>
+					</div>
+				</div>
+				<div id="0" class="next-block" onclick="next_block(this)">></div>
+			</div>
+		</main>
+
+
+		<footer class="footer">
+			<p>development by feb</p>
+		</footer>
+	</div>
+
+	<!-- Переливающийся фон -->
+	<script type="text/javascript">
+		i = 90
+		function animation() {
+			document.getElementsByClassName("wrapper")[0].style.background = "linear-gradient("+i+"deg, #baff85, #76cef7)";
+			if (i == 480) { i = 90 }
+			i++
+			setTimeout(animation, 50);
+		}
+		animation()
+	</script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/button.js"></script>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>
